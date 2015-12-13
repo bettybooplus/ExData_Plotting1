@@ -1,4 +1,4 @@
-##Transform data
+##ransform data
 dataset <- read.table("household_power_consumption.txt", header=T, 
                       sep = ";", stringsAsFactors=F)
 set <- subset(dataset, Date %in% c("1/2/2007","2/2/2007"))
@@ -18,12 +18,14 @@ plot(datetime, set$Sub_metering_1, type="l",
       ylab="Energy sub metering", xlab="")
 points(datetime, set$Sub_metering_2, type="l", col="red")
 points(datetime, set$Sub_metering_3, type="l", col="blue")
-legend("topright", legend = c(names(set[7:9])), lty=1, 
+legend("topright", bty="n", legend = c(names(set[7:9])), lty=1, 
         col=c("black", "red", "blue"), cex=0.75)
 
 plot(datetime, set$Global_reactive_power, type="l",
        ylab = names(set[4]))
 
 dev.off()
+
+
 
 
